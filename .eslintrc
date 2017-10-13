@@ -1,0 +1,58 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "func-names": 0,
+    "global-require": 0,
+    "no-console": 0,
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "quote-props": [
+      "error",
+      "consistent"
+    ],
+    "no-mixed-spaces-and-tabs": [
+      "error",
+      "smart-tabs"
+    ],
+    "indent": [
+      "error",
+      "tab",
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "space-in-parens": [
+      "error",
+      "always"
+    ],
+    "no-multi-spaces": [
+      "error",
+      {
+        "exceptions": {
+          "VariableDeclarator": true,
+          "AssignmentExpression": true
+        }
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": true,
+        "align": "colon"
+      }
+    ],
+    "brace-style": [
+      "error",
+      "stroustrup"
+    ],
+    "comma-dangle": "off",
+    "no-tabs": 0,
+    "padded-blocks": "off",
+    "no-underscore-dangle": "off"
+  },
+  "globals": {
+    "appRequire": true
+  }
+}
