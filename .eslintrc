@@ -51,8 +51,5 @@
     "no-tabs": 0,
     "padded-blocks": "off",
     "no-underscore-dangle": "off"
-  },
-  "globals": {
-    "appRequire": true
   }
 }

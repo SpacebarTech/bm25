@@ -1,6 +1,8 @@
-const R         = require( 'ramda' );
+const R             = require( 'ramda' );
 
-const stopWords = require( './lib/stopwords' );
+const stopWords     = require( './lib/stopwords' );
+const step2suffixes = require( './lib/step2suffixes' );
+const step3suffixes = require( './lib/step3suffixes' );
 
 const BM25 = ( function () {
 
@@ -12,40 +14,6 @@ const BM25 = ( function () {
 
 	// stemmer algorithm
 	self.stemmer = ( function () {
-
-		const step2list = {
-			'ational' : 'ate',
-			'tional'  : 'tion',
-			'enci'    : 'ence',
-			'anci'    : 'ance',
-			'izer'    : 'ize',
-			'bli'     : 'ble',
-			'alli'    : 'al',
-			'entli'   : 'ent',
-			'eli'     : 'e',
-			'ousli'   : 'ous',
-			'ization' : 'ize',
-			'ation'   : 'ate',
-			'ator'    : 'ate',
-			'alism'   : 'al',
-			'iveness' : 'ive',
-			'fulness' : 'ful',
-			'ousness' : 'ous',
-			'aliti'   : 'al',
-			'iviti'   : 'ive',
-			'biliti'  : 'ble',
-			'logi'    : 'log',
-		};
-
-		const step3list = {
-			'icate' : 'ic',
-			'ative' : '',
-			'alize' : 'al',
-			'iciti' : 'ic',
-			'ical'  : 'ic',
-			'ful'   : '',
-			'ness'  : '',
-		};
 
 		const c    = '[^aeiou]';                            // consonant
 		const v    = '[aeiouy]';                            // vowel
@@ -152,7 +120,7 @@ const BM25 = ( function () {
 				re = new RegExp( mgr0 );
 
 				if ( re.test( stem ) ) {
-					mutatedWord = `${stem}${step2list[suffix]}`;
+					mutatedWord = `${stem}${step2suffixes[suffix]}`;
 				}
 			}
 
@@ -166,7 +134,7 @@ const BM25 = ( function () {
 				re = new RegExp( mgr0 );
 
 				if ( re.test( stem ) ) {
-					mutatedWord = `${stem}${step3list[suffix]}`;
+					mutatedWord = `${stem}${step3suffixes[suffix]}`;
 				}
 			}
 
