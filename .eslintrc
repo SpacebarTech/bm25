@@ -1,4 +1,7 @@
 {
+  "parserOptions": {
+    "ecmaVersion" : 2016
+  },
 	"extends": ["airbnb", "plugin:vue/base"],
 	"rules": {
 		"no-use-before-define": 0,

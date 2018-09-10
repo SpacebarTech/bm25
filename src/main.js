@@ -1,4 +1,3 @@
-// Put what you want to export in this file
 const HasProperty = ( a, b ) => Object.prototype.hasOwnProperty.call( a, b );
 const ToString = ( val ) => {
 
@@ -107,7 +106,7 @@ const findMatch = ( a, b, errorsAllowed = 2 ) => {
 
 };
 
-export class BM25 {
+export default class BM25 {
 
 	constructor( inputOptions ) {
 
@@ -167,6 +166,7 @@ export class BM25 {
 			'ness'  : ''
 		};
 
+		/* eslint-disable no-multi-spaces */
 		this.c = '[^aeiou]';               // consonant
 		this.v = '[aeiouy]';               // vowel
 		this.C = `${this.c}[^aeiouy]*`;    // consonant sequence
@@ -176,6 +176,7 @@ export class BM25 {
 		this.meq1 = `^(${this.C})?${this.V}${this.C}(${this.V})?$`;     // [C]VC[V] is m=1
 		this.mgr1 = `^(${this.C})?${this.V}${this.C}${this.V}${this.C}`; // [C]VCVC... is m>1
 		this.s_v  = `^(${this.C})?${this.v}`;
+		/* eslint-enable no-multi-spaces */
 
 	}
 
@@ -732,7 +733,7 @@ export class BM25 {
 							return 0.5;
 						}
 
-						return ( inverseRelevance ** 2 );
+						return ( inverseRelevance ** 2 ); // eslint-disable-line
 					} )();
 
 					// increase the relevance of this search result
