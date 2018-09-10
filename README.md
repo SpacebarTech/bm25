@@ -1,7 +1,7 @@
-bm25
+BM25
 ========
 
-bm25 search algorithm
+Stemming and indexing based off of the porter stemming algorithm, and BM25 indexing algorithm
 
 ## Installation
 
