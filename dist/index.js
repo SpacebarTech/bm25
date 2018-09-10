@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("bm25", [], factory);
+		define("BM25", [], factory);
 	else if(typeof exports === 'object')
-		exports["bm25"] = factory();
+		exports["BM25"] = factory();
 	else
-		root["bm25"] = factory();
+		root["BM25"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -90,7 +90,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Put what you want to export in this file
 var HasProperty = function HasProperty(a, b) {
 	return Object.prototype.hasOwnProperty.call(a, b);
 };
@@ -198,7 +197,7 @@ var findMatch = function findMatch(a, b) {
 	return -1;
 };
 
-var BM25 = exports.BM25 = function () {
+var BM25 = function () {
 	function BM25(inputOptions) {
 		var _this = this;
 
@@ -260,6 +259,7 @@ var BM25 = exports.BM25 = function () {
 			'ness': ''
 		};
 
+		/* eslint-disable no-multi-spaces */
 		this.c = '[^aeiou]'; // consonant
 		this.v = '[aeiouy]'; // vowel
 		this.C = this.c + '[^aeiouy]*'; // consonant sequence
@@ -269,6 +269,7 @@ var BM25 = exports.BM25 = function () {
 		this.meq1 = '^(' + this.C + ')?' + this.V + this.C + '(' + this.V + ')?$'; // [C]VC[V] is m=1
 		this.mgr1 = '^(' + this.C + ')?' + this.V + this.C + this.V + this.C; // [C]VCVC... is m>1
 		this.s_v = '^(' + this.C + ')?' + this.v;
+		/* eslint-enable no-multi-spaces */
 	}
 
 	_createClass(BM25, [{
@@ -815,7 +816,7 @@ var BM25 = exports.BM25 = function () {
 								return 0.5;
 							}
 
-							return inverseRelevance ** 2;
+							return inverseRelevance ** 2; // eslint-disable-line
 						}();
 
 						// increase the relevance of this search result
@@ -891,6 +892,9 @@ var BM25 = exports.BM25 = function () {
 
 	return BM25;
 }();
+
+exports.default = BM25;
+module.exports = exports['default'];
 
 /***/ })
 /******/ ]);
