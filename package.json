@@ -11,7 +11,7 @@
     "build": "webpack",
     "lint": "eslint ./src",
     "semantic-release": "semantic-release",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once --pro"
   },
   "repository": {
     "type": "git",
