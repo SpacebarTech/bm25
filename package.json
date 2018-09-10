@@ -9,7 +9,7 @@
   "scripts": {
     "test": "mocha --require babel-core/register --colors ./test/test.js",
     "build": "webpack",
-    "lint": "eslint ./",
+    "lint": "eslint ./src",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
