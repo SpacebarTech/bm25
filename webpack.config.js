@@ -5,7 +5,7 @@ const path = require( 'path' );
 module.exports = {
   entry: path.resolve( __dirname, 'src/main.js' ),
   output: {
-    filename: 'bm25.js',
+    filename: 'index.js',
 		path: path.resolve( __dirname, 'dist' ),
 		library: 'bm25',
 		libraryTarget: 'umd',

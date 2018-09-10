@@ -2,7 +2,7 @@
   "name": "@spacebartech/bm25",
   "version": "0.0.0-development",
   "description": "Stemming and indexing based off of the porter stemming algorithm, and BM25 indexing algorithm",
-  "main": "dist/bm25.js",
+  "main": "dist/index.js",
   "files": [
     "dist/"
   ],
