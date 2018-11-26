@@ -435,6 +435,9 @@ export default class BM25 {
 
 	index( collection, inputOptions ) {
 
+		this.documents = {};
+		this.terms     = {};
+
 		const then = Date.now();
 
 		// set options
